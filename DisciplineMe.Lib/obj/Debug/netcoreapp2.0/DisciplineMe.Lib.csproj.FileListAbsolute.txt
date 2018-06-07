@@ -1,0 +1,6 @@
+c:\users\lenovo\source\repos\DisciplineMe\DisciplineMe.Lib\bin\Debug\netcoreapp2.0\DisciplineMe.Lib.deps.json
+c:\users\lenovo\source\repos\DisciplineMe\DisciplineMe.Lib\bin\Debug\netcoreapp2.0\DisciplineMe.Lib.dll
+c:\users\lenovo\source\repos\DisciplineMe\DisciplineMe.Lib\obj\Debug\netcoreapp2.0\DisciplineMe.Lib.csprojAssemblyReference.cache
+c:\users\lenovo\source\repos\DisciplineMe\DisciplineMe.Lib\obj\Debug\netcoreapp2.0\DisciplineMe.Lib.csproj.CoreCompileInputs.cache
+c:\users\lenovo\source\repos\DisciplineMe\DisciplineMe.Lib\obj\Debug\netcoreapp2.0\DisciplineMe.Lib.AssemblyInfoInputs.cache
+c:\users\lenovo\source\repos\DisciplineMe\DisciplineMe.Lib\obj\Debug\netcoreapp2.0\DisciplineMe.Lib.AssemblyInfo.cs
