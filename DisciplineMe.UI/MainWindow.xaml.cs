@@ -23,12 +23,11 @@ namespace DisciplineMe.UI
     {
         public MainWindow()
         {
-            InitializeComponent();
-
-            using (var db = new Context())
-            {
-
-            }
+            InitializeComponent();   
+            
+            var repo = new Repository();
+            repo.Create();
+            var habit = repo.Read();
         }
     }
 }

@@ -1,0 +1,6 @@
+c:\users\lenovo\source\repos\DisciplineMe\ClassLibrary1\bin\Debug\netstandard2.0\DisciplineMe.Lib.deps.json
+c:\users\lenovo\source\repos\DisciplineMe\ClassLibrary1\bin\Debug\netstandard2.0\DisciplineMe.Lib.dll
+c:\users\lenovo\source\repos\DisciplineMe\ClassLibrary1\obj\Debug\netstandard2.0\DisciplineMe.Lib.csprojAssemblyReference.cache
+c:\users\lenovo\source\repos\DisciplineMe\ClassLibrary1\obj\Debug\netstandard2.0\DisciplineMe.Lib.csproj.CoreCompileInputs.cache
+c:\users\lenovo\source\repos\DisciplineMe\ClassLibrary1\obj\Debug\netstandard2.0\DisciplineMe.Lib.AssemblyInfoInputs.cache
+c:\users\lenovo\source\repos\DisciplineMe\ClassLibrary1\obj\Debug\netstandard2.0\DisciplineMe.Lib.AssemblyInfo.cs

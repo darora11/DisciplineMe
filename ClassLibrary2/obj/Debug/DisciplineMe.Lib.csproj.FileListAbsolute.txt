@@ -1,0 +1,12 @@
+C:\Users\Lenovo\source\repos\DisciplineMe\ClassLibrary2\bin\Debug\ClassLibrary2.dll.config
+C:\Users\Lenovo\source\repos\DisciplineMe\ClassLibrary2\bin\Debug\ClassLibrary2.dll
+C:\Users\Lenovo\source\repos\DisciplineMe\ClassLibrary2\bin\Debug\ClassLibrary2.pdb
+C:\Users\Lenovo\source\repos\DisciplineMe\ClassLibrary2\bin\Debug\EntityFramework.dll
+C:\Users\Lenovo\source\repos\DisciplineMe\ClassLibrary2\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Lenovo\source\repos\DisciplineMe\ClassLibrary2\bin\Debug\EntityFramework.xml
+C:\Users\Lenovo\source\repos\DisciplineMe\ClassLibrary2\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Lenovo\source\repos\DisciplineMe\ClassLibrary2\obj\Debug\DisciplineMe.Lib.csprojAssemblyReference.cache
+C:\Users\Lenovo\source\repos\DisciplineMe\ClassLibrary2\obj\Debug\DisciplineMe.Lib.csproj.CoreCompileInputs.cache
+C:\Users\Lenovo\source\repos\DisciplineMe\ClassLibrary2\obj\Debug\DisciplineMe.Lib.csproj.CopyComplete
+C:\Users\Lenovo\source\repos\DisciplineMe\ClassLibrary2\obj\Debug\ClassLibrary2.dll
+C:\Users\Lenovo\source\repos\DisciplineMe\ClassLibrary2\obj\Debug\ClassLibrary2.pdb
