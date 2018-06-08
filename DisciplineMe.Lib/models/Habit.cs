@@ -1,22 +1,20 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace DisciplineMe.Lib
 {
-    public class Habbit
+    public class Habit
     {
         public int Id { get; set; }
+
+        [Required]
+        [MaxLength(100)]
         public string Title { get; set; }
-        public TimeSpan NotificationTimespan { get; set; }
+        public DateTime DateStart { get; set; }
         public TimeSpan ActiveDuration { get; set; }
+
+        [MaxLength(100)]
         public string QuestionPhrase { get; set; }
         public int DayPassed { get; set; }
-
-        public Habbit(string Title, TimeSpan NotificationTimespan, TimeSpan ActiveDuration, string QuestionPhrase)
-        {
-            this.Title = Title;
-            this.NotificationTimespan = NotificationTimespan;
-            this.ActiveDuration = ActiveDuration;
-            this.QuestionPhrase = QuestionPhrase;
-        }
     }
 }

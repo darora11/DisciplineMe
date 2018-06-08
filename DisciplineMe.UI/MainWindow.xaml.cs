@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using DisciplineMe.Lib;
 
 namespace DisciplineMe.UI
 {
@@ -23,6 +24,11 @@ namespace DisciplineMe.UI
         public MainWindow()
         {
             InitializeComponent();
+
+            using (var db = new Context())
+            {
+
+            }
         }
     }
 }

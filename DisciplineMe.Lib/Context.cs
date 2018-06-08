@@ -5,9 +5,9 @@ using System.Text;
 
 namespace DisciplineMe.Lib
 {
-    class HabitContext : DbContext
+    public class Context : DbContext
     {
-        public HabitContext() : base("DbConnection")
+        public Context() : base("DbConnection")
         { }
 
         public DbSet<Habit> Habits { get; set; }
