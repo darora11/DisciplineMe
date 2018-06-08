@@ -4,6 +4,7 @@ namespace DisciplineMe.Lib
 {
     public class Habbit
     {
+        public int Id { get; set; }
         public string Title { get; set; }
         public TimeSpan NotificationTimespan { get; set; }
         public TimeSpan ActiveDuration { get; set; }
