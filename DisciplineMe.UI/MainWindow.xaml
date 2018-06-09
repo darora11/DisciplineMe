@@ -8,6 +8,6 @@
         Title="MainWindow" Height="310" Width="614.4">
     <Grid>
         <Button>Discipline Me!</Button>
-        <TextBox>Test test</TextBox>
+        <TextBox>Test test test</TextBox>
     </Grid>
 </Window>
