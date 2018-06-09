@@ -5,29 +5,30 @@ using System.Text;
 
 namespace DisciplineMe.Lib
 {
-    public class Repository : HabitInterface
+    public class Repository : IRepository
     {
-        public List<Habit> Habits { get; set; } = new List<Habit>();
-
-        public Repository()
+        public void Create(string Title)
         {
-
+            var QPhrase = $"It is time for your habit:\n'{Title}'\nAre you coping?";
+            var MsgTime = new TimeSpan(20, 0, 0);
+            var ActiveDuration = new TimeSpan(4, 0, 0);
+            Create(Title, QPhrase, ActiveDuration, MsgTime);
         }
-        
-    
-        public void Create()
+
+        public void Create(string Title, string QuestionPhrase, TimeSpan ActiveDuration,  TimeSpan MsgTime)
         {
             using (var db = new Context())
             {
-                var Now = new DateTime();
+                var Now = DateTime.Now;
+                var DateStart = new DateTime(Now.Year, Now.Month, Now.Day, MsgTime.Hours, MsgTime.Minutes, MsgTime.Seconds);
 
                 var Habit = new Habit
                 {
-                    Title = "Wake up before 7am",
-                    ActiveDuration = new TimeSpan(0, 30, 0),
-                    DayPassed = 0,
-                    QuestionPhrase = "Good morning! Is it?",
-                    DateStart = new DateTime(Now.Year, Now.Month, Now.Day, 6, 30, 00)
+                    Title = Title,
+                    ActiveDuration = ActiveDuration,
+                    DayPassed = 0, // as initial value
+                    QuestionPhrase = QuestionPhrase,
+                    DateStart = DateStart
                 };
 
                 db.Habits.Add(Habit);
