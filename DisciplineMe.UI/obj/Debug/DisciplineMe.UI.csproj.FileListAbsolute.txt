@@ -21,3 +21,5 @@ C:\Users\Lenovo\source\repos\DisciplineMe\DisciplineMe.UI\bin\Debug\EntityFramew
 C:\Users\Lenovo\source\repos\DisciplineMe\DisciplineMe.UI\bin\Debug\DisciplineMe.Lib.dll
 C:\Users\Lenovo\source\repos\DisciplineMe\DisciplineMe.UI\bin\Debug\DisciplineMe.Lib.pdb
 C:\Users\Lenovo\source\repos\DisciplineMe\DisciplineMe.UI\bin\Debug\DisciplineMe.Lib.dll.config
+C:\Users\Lenovo\source\repos\DisciplineMe\DisciplineMe.UI\obj\Debug\AddHabitWindow.g.cs
+C:\Users\Lenovo\source\repos\DisciplineMe\DisciplineMe.UI\obj\Debug\AddHabitWindow.baml

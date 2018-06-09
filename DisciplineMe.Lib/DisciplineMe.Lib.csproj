@@ -49,10 +49,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="models\Context.cs" />
-    <Compile Include="IRepository.cs" />
+    <Compile Include="IHabitRepository.cs" />
     <Compile Include="models\Habit.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repository.cs" />
+    <Compile Include="DbRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

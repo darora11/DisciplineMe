@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DisciplineMe.UI"
         mc:Ignorable="d"
-        Title="MainWindow" Height="414.8" Width="689.6">
+        Title="MainWindow" Height="414.8" Width="674.8">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="40"/>
@@ -18,11 +18,69 @@
 
         <Calendar Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="5"/>
         <Label Content="Discipline Me!" Grid.Row="0" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="14" FontWeight="Bold"/>
-        
-        <ListBox x:Name="listBox" Grid.Column="1" Grid.Row="1"/>
 
-        
-        <Button Content="Add new Habit" HorizontalAlignment="Left" Margin="10" Grid.Row="1" VerticalAlignment="Top" Width="180"/>
+        <ListBox x:Name="listBox" Grid.Column="1" Grid.Row="1" HorizontalContentAlignment="Stretch">
+            <ListBoxItem>
+                <Grid Cursor="None" IsEnabled="False">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="100"/>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Grid.Row="0">
+                        <TextBlock Margin="5" FontSize="16">Title</TextBlock>
+                        <TextBlock Margin="5">Each day at 14:00 (during 30min)</TextBlock>
+                    </StackPanel>
+                    <StackPanel Grid.Column="1">
+                        <Label VerticalAlignment="Center" HorizontalAlignment="Center" Content="6/7 days left" FontWeight="Bold"/>
+                        <StackPanel Orientation="Horizontal">
+                            <Ellipse Height="10" Width="10" Margin="25 5 5 5" Stroke="#FFD64F4F"/>
+                            <Ellipse Height="10" Width="10" Margin="5" Stroke="#FF4B4BD4"/>
+                            <Ellipse Height="10" Width="10" Margin="5" Stroke="#FF56BF56"/>
+                        </StackPanel>
+                    </StackPanel>
+                </Grid>
+            </ListBoxItem>
+            <ListBoxItem>
+                <Grid Cursor="None" IsEnabled="False" >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="100"/>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Grid.Row="0">
+                        <TextBlock Margin="5" FontSize="16">Title</TextBlock>
+                        <TextBlock Margin="5">Each day at 14:00 (during 30min)</TextBlock>
+                    </StackPanel>
+                    <StackPanel Grid.Column="1">
+                        <Label VerticalAlignment="Center" HorizontalAlignment="Center" Content="1/90 days left" FontWeight="Bold" Margin="11,0,1,0"/>
+                        <StackPanel Orientation="Horizontal">
+                            <Ellipse Height="10" Width="10" Margin="25 5 5 5" Stroke="#FFD64F4F" Fill="#FFD64F4F"/>
+                            <Ellipse Height="10" Width="10" Margin="5" Stroke="#FF4B4BD4" Fill="#FF4B4BD4"/>
+                            <Ellipse Height="10" Width="10" Margin="5" Stroke="#FF56BF56" />
+                        </StackPanel>
+                    </StackPanel>
+                </Grid>
+            </ListBoxItem>
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition Width="50"/>
+                        </Grid.ColumnDefinitions>
+                        <StackPanel Grid.Row="0">
+                            <TextBlock Margin="5">Some text about me</TextBlock>
+                            <Button>Edit</Button>
+                        </StackPanel>
+                        <Label Grid.Row="1" Content="Hey"/>
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
+        <StackPanel Grid.Row="1">
+            <Button Content="Add new Habit" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="180" Height="40" Background="#FF56BF56" FontSize="16"/>
+            <Button Content="Edit" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="180" Height="24"/>
+        </StackPanel>
 
     </Grid>
 </Window>

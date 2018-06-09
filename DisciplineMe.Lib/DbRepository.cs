@@ -5,7 +5,7 @@ using System.Text;
 
 namespace DisciplineMe.Lib
 {
-    public class Repository : IRepository
+    public class DbRepository : IHabitRepository
     {
         public void Create(string Title)
         {

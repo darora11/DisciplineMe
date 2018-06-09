@@ -4,7 +4,7 @@ using System.Text;
 
 namespace DisciplineMe.Lib
 {
-    public interface IRepository
+    public interface IHabitRepository
     {
         /// <summary>
         /// Creates new row in Habit table of database.
