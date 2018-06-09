@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.27703.2026
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DisciplineMe.UI", "DisciplineMe.UI\DisciplineMe.UI.csproj", "{02641323-EC8A-491C-946E-D8C935A13743}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DisciplineMe.Lib", "ClassLibrary2\DisciplineMe.Lib.csproj", "{479A9302-49D4-4172-BB8C-2A18D385FEAF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DisciplineMe.Lib", "DisciplineMe.Lib\DisciplineMe.Lib.csproj", "{479A9302-49D4-4172-BB8C-2A18D385FEAF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

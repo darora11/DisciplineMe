@@ -10,3 +10,15 @@ C:\Users\Lenovo\source\repos\DisciplineMe\ClassLibrary2\obj\Debug\DisciplineMe.L
 C:\Users\Lenovo\source\repos\DisciplineMe\ClassLibrary2\obj\Debug\DisciplineMe.Lib.csproj.CopyComplete
 C:\Users\Lenovo\source\repos\DisciplineMe\ClassLibrary2\obj\Debug\ClassLibrary2.dll
 C:\Users\Lenovo\source\repos\DisciplineMe\ClassLibrary2\obj\Debug\ClassLibrary2.pdb
+C:\Users\Lenovo\source\repos\DisciplineMe\DisciplineMe.Lib\bin\Debug\DisciplineMe.Lib.dll.config
+C:\Users\Lenovo\source\repos\DisciplineMe\DisciplineMe.Lib\bin\Debug\DisciplineMe.Lib.dll
+C:\Users\Lenovo\source\repos\DisciplineMe\DisciplineMe.Lib\bin\Debug\DisciplineMe.Lib.pdb
+C:\Users\Lenovo\source\repos\DisciplineMe\DisciplineMe.Lib\bin\Debug\EntityFramework.dll
+C:\Users\Lenovo\source\repos\DisciplineMe\DisciplineMe.Lib\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Lenovo\source\repos\DisciplineMe\DisciplineMe.Lib\bin\Debug\EntityFramework.xml
+C:\Users\Lenovo\source\repos\DisciplineMe\DisciplineMe.Lib\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Lenovo\source\repos\DisciplineMe\DisciplineMe.Lib\obj\Debug\DisciplineMe.Lib.csprojAssemblyReference.cache
+C:\Users\Lenovo\source\repos\DisciplineMe\DisciplineMe.Lib\obj\Debug\DisciplineMe.Lib.csproj.CoreCompileInputs.cache
+C:\Users\Lenovo\source\repos\DisciplineMe\DisciplineMe.Lib\obj\Debug\DisciplineMe.Lib.csproj.CopyComplete
+C:\Users\Lenovo\source\repos\DisciplineMe\DisciplineMe.Lib\obj\Debug\DisciplineMe.Lib.dll
+C:\Users\Lenovo\source\repos\DisciplineMe\DisciplineMe.Lib\obj\Debug\DisciplineMe.Lib.pdb

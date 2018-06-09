@@ -25,9 +25,9 @@ namespace DisciplineMe.UI
         {
             InitializeComponent();   
             
-            IRepository repo = new Repository();
-            repo.Create()
-            var habit = repo.Read();
+            // IRepository repo = new Repository();
+            // repo.Create("Morning wake up before 7 am");
+            // var habit = repo.Read();
         }
     }
 }

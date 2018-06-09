@@ -1,10 +1,7 @@
 C:\Users\Lenovo\source\repos\DisciplineMe\DisciplineMe.UI\bin\Debug\DisciplineMe.UI.exe.config
 C:\Users\Lenovo\source\repos\DisciplineMe\DisciplineMe.UI\bin\Debug\DisciplineMe.UI.exe
 C:\Users\Lenovo\source\repos\DisciplineMe\DisciplineMe.UI\bin\Debug\DisciplineMe.UI.pdb
-C:\Users\Lenovo\source\repos\DisciplineMe\DisciplineMe.UI\bin\Debug\ClassLibrary2.dll
 C:\Users\Lenovo\source\repos\DisciplineMe\DisciplineMe.UI\bin\Debug\EntityFramework.dll
-C:\Users\Lenovo\source\repos\DisciplineMe\DisciplineMe.UI\bin\Debug\ClassLibrary2.pdb
-C:\Users\Lenovo\source\repos\DisciplineMe\DisciplineMe.UI\bin\Debug\ClassLibrary2.dll.config
 C:\Users\Lenovo\source\repos\DisciplineMe\DisciplineMe.UI\bin\Debug\EntityFramework.xml
 C:\Users\Lenovo\source\repos\DisciplineMe\DisciplineMe.UI\obj\Debug\DisciplineMe.UI.csprojAssemblyReference.cache
 C:\Users\Lenovo\source\repos\DisciplineMe\DisciplineMe.UI\obj\Debug\MainWindow.g.cs
@@ -21,3 +18,6 @@ C:\Users\Lenovo\source\repos\DisciplineMe\DisciplineMe.UI\obj\Debug\DisciplineMe
 C:\Users\Lenovo\source\repos\DisciplineMe\DisciplineMe.UI\obj\Debug\DisciplineMe.UI.pdb
 C:\Users\Lenovo\source\repos\DisciplineMe\DisciplineMe.UI\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\Lenovo\source\repos\DisciplineMe\DisciplineMe.UI\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Lenovo\source\repos\DisciplineMe\DisciplineMe.UI\bin\Debug\DisciplineMe.Lib.dll
+C:\Users\Lenovo\source\repos\DisciplineMe\DisciplineMe.UI\bin\Debug\DisciplineMe.Lib.pdb
+C:\Users\Lenovo\source\repos\DisciplineMe\DisciplineMe.UI\bin\Debug\DisciplineMe.Lib.dll.config
