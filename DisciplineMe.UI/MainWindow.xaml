@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DisciplineMe.UI"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
         mc:Ignorable="d"
         Title="MainWindow" Height="414.8" Width="674.8">
     <Grid>
@@ -16,10 +17,18 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <Calendar Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="5"/>
+        <Calendar x:Name="calendar" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="5">
+            <Calendar.CalendarDayButtonStyle>
+                <Style TargetType="CalendarDayButton" BasedOn="{StaticResource {x:Type CalendarDayButton}}">
+                    <EventSetter Event="Loaded" Handler="calendarButton_Loaded" />
+                </Style>
+            </Calendar.CalendarDayButtonStyle>
+        </Calendar>
+        
+
         <Label Content="Discipline Me!" Grid.Row="0" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="14" FontWeight="Bold"/>
 
-        <ListBox x:Name="listBox" Grid.Column="1" Grid.Row="1" HorizontalContentAlignment="Stretch">
+        <ListBox x:Name="listBox" Grid.Column="1" Grid.Row="1" HorizontalContentAlignment="Stretch" SelectionChanged="listBox_SelectionChanged">
             <ListBoxItem>
                 <Grid Cursor="None" IsEnabled="False">
                     <Grid.ColumnDefinitions>
