@@ -40,7 +40,7 @@ namespace DisciplineMe.UI
         }
 
         // Next part were taken from http://mom.hlmjr.com/2016/11/07/highlighting-dates-on-a-wpf-calendar-control/
-        // for dates highliting in the Calendar.
+        // for dates highlighting in the Calendar.
 
         private void calendarButton_Loaded(object sender, EventArgs e)
         {
@@ -63,6 +63,11 @@ namespace DisciplineMe.UI
             CalendarDayButton button = (CalendarDayButton)sender;
             DateTime date = (DateTime)button.DataContext;
             HighlightDay(button, date);
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            new AddHabitWindow().Show();
         }
     }
 }
