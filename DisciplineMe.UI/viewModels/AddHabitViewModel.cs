@@ -43,7 +43,6 @@ namespace DisciplineMe.UI.viewModels
             }
         }
 
-
         private int _timeTicks;
         public int TimeTicks
         {
@@ -56,6 +55,7 @@ namespace DisciplineMe.UI.viewModels
                 OnPropertyChanged("NotificationTimeLabel");
             }
         }
+
         public string NotificationTimeLabel
         {
             get

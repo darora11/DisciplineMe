@@ -1,4 +1,5 @@
-﻿using DisciplineMe.UI.viewModels;
+﻿using DisciplineMe.Lib;
+using DisciplineMe.UI.viewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,6 +22,7 @@ namespace DisciplineMe.UI
     public partial class AddHabitWindow : Window
     {
         private AddHabitViewModel Habit { get; set; } = new AddHabitViewModel();
+        IHabitRepository repo = new DbRepository();
 
         public AddHabitWindow()
         {
@@ -31,7 +33,26 @@ namespace DisciplineMe.UI
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            var a = 5;
+            if (String.IsNullOrWhiteSpace(Habit.Title))
+            {
+                MessageBox.Show("Please, describe your new habit. The field should not be empty.");
+                return;
+            }
+
+            try
+            {
+                repo.Create(
+                    Title: Habit.Title,
+                    QuestionPhrase: Habit.Message,
+                    ActiveDuration: new TimeSpan(0, Habit.Interval, 0),
+                    MsgTime: Habit.NotificationTimespan
+                );
+                Close();
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show("Something went wrong: ", err.Message);
+            }
         }
     }
 }
