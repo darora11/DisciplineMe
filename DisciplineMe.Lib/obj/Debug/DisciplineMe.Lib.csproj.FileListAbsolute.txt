@@ -22,3 +22,6 @@ C:\Users\Lenovo\source\repos\DisciplineMe\DisciplineMe.Lib\obj\Debug\DisciplineM
 C:\Users\Lenovo\source\repos\DisciplineMe\DisciplineMe.Lib\obj\Debug\DisciplineMe.Lib.csproj.CopyComplete
 C:\Users\Lenovo\source\repos\DisciplineMe\DisciplineMe.Lib\obj\Debug\DisciplineMe.Lib.dll
 C:\Users\Lenovo\source\repos\DisciplineMe\DisciplineMe.Lib\obj\Debug\DisciplineMe.Lib.pdb
+C:\Users\Lenovo\source\repos\DisciplineMe\DisciplineMe.Lib\obj\Debug\DisciplineMe.Lib.Migrations.InitialCreate.resources
+C:\Users\Lenovo\source\repos\DisciplineMe\DisciplineMe.Lib\obj\Debug\DisciplineMe.Lib.csproj.GenerateResource.cache
+C:\Users\Lenovo\source\repos\DisciplineMe\DisciplineMe.Lib\obj\Debug\DisciplineMe.Lib.Migrations.maxcharsfortextfields.resources

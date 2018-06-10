@@ -51,7 +51,7 @@ namespace DisciplineMe.UI
             }
             catch (Exception err)
             {
-                MessageBox.Show("Something went wrong: ", err.Message);
+                MessageBox.Show("Something went wrong: " + err.Message);
             }
         }
     }
