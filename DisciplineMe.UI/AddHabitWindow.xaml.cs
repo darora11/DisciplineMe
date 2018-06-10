@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DisciplineMe.UI.viewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,14 +20,18 @@ namespace DisciplineMe.UI
     /// </summary>
     public partial class AddHabitWindow : Window
     {
+        private AddHabitViewModel Habit { get; set; } = new AddHabitViewModel();
+
         public AddHabitWindow()
         {
             InitializeComponent();
+
+            DataContext = Habit;
         }
 
-        private void RadioButton_Checked(object sender, RoutedEventArgs e)
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
-
+            var a = 5;
         }
     }
 }
