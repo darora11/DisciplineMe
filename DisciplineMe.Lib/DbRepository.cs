@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DisciplineMe.Lib.models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,7 +16,7 @@ namespace DisciplineMe.Lib
             Create(Title, QPhrase, ActiveDuration, MsgTime);
         }
 
-        public void Create(string Title, string QuestionPhrase, TimeSpan ActiveDuration,  TimeSpan MsgTime)
+        public void Create(string Title, string QuestionPhrase, TimeSpan ActiveDuration, TimeSpan MsgTime)
         {
             using (var db = new Context())
             {
@@ -26,7 +27,6 @@ namespace DisciplineMe.Lib
                 {
                     Title = Title,
                     ActiveDuration = ActiveDuration,
-                    DayPassed = 0, // as initial value
                     QuestionPhrase = QuestionPhrase,
                     DateStart = DateStart
                 };

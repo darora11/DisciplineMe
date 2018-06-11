@@ -56,7 +56,12 @@
     <Compile Include="Migrations\201806101037345_max chars for text fields.Designer.cs">
       <DependentUpon>201806101037345_max chars for text fields.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201806110339324_add-confirmaton-tal.cs" />
+    <Compile Include="Migrations\201806110339324_add-confirmaton-tal.Designer.cs">
+      <DependentUpon>201806110339324_add-confirmaton-tal.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="models\Confirmation.cs" />
     <Compile Include="models\Context.cs" />
     <Compile Include="IHabitRepository.cs" />
     <Compile Include="models\Habit.cs" />
@@ -73,6 +78,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201806101037345_max chars for text fields.resx">
       <DependentUpon>201806101037345_max chars for text fields.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806110339324_add-confirmaton-tal.resx">
+      <DependentUpon>201806110339324_add-confirmaton-tal.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
