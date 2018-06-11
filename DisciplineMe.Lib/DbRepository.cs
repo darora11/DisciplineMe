@@ -36,47 +36,43 @@ namespace DisciplineMe.Lib
             }
         }
 
-        public Habit Read()
+        IEnumerable<Habit> IHabitRepository.Read()
         {
             using (var db = new Context())
             {
-                return db.Habits.First();
+                return db.Habits;
             }
-        }
-
-        public void Update()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Delete()
-        {
-            throw new NotImplementedException();
-        }
-
-        IEnumerable<Habit> IHabitRepository.Read()
-        {
-            throw new NotImplementedException();
         }
 
         public Habit Read(int id)
         {
-            throw new NotImplementedException();
+            using (var db = new Context())
+            {
+                return db.Habits.Where(h => h.Id == id).First();
+            }
         }
 
         public void Update(Habit updatedHabit)
         {
-            throw new NotImplementedException();
+            using (var db = new Context())
+            {
+                db.SaveChanges();
+            }
         }
 
         public void Delete(int id)
         {
-            throw new NotImplementedException();
+            var habit = Read(id);
+            Delete(habit);    
         }
 
         public void Delete(Habit habit)
         {
-            throw new NotImplementedException();
+            using (var db = new Context())
+            {
+                db.Habits.Remove(habit);
+                db.SaveChanges();
+            }
         }
     }
 }

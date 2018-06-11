@@ -6,7 +6,7 @@ using System.Text;
 namespace DisciplineMe.Lib
 {
     public interface IHabitRepository
-    {
+    { 
         /// <summary>
         /// Creates new row in Habit table of database.
         /// </summary>
@@ -34,8 +34,8 @@ namespace DisciplineMe.Lib
         /// <summary>
         /// Updates habit object.
         /// </summary>
-        /// <param name="updatedHabit">New habit object. Should contain the same id as
-        /// initial one and it should not be equal 0.</param>
+        /// <param name="id">Id of habit to update.</param>
+        /// <param name="updatedHabit">New habit object.</param>
         void Update(Habit updatedHabit);
         /// <summary>
         /// Removes habit from a storage.

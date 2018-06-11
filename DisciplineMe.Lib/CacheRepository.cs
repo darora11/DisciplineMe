@@ -19,11 +19,6 @@ namespace DisciplineMe.Lib
             throw new NotImplementedException();
         }
 
-        public void Delete()
-        {
-            throw new NotImplementedException();
-        }
-
         public void Delete(int id)
         {
             throw new NotImplementedException();
