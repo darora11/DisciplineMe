@@ -22,7 +22,7 @@ namespace DisciplineMe.UI
     public partial class AddHabitWindow : Window
     {
         private AddHabitViewModel Habit { get; set; } = new AddHabitViewModel();
-        IHabitRepository repo = RepoFactory.Factory.GetHabitRepository();
+        IHabitRepository repo = RepoFactory.HabitRepository;
 
         public AddHabitWindow()
         {

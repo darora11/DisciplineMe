@@ -14,6 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using DisciplineMe.Lib;
+using DisciplineMe.UI.viewModels;
 
 namespace DisciplineMe.UI
 {
@@ -29,9 +30,13 @@ namespace DisciplineMe.UI
             new DateTime(2018,6,14)
         };
 
+        private IHabitRepository _repo = RepoFactory.HabitRepository;
+
         public MainWindow()
         {
             InitializeComponent();
+            var habits = _repo.Read();
+            listBox.ItemsSource = habits;
         }
 
         private void listBox_SelectionChanged(object sender, SelectionChangedEventArgs e)

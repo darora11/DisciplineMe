@@ -40,7 +40,7 @@ namespace DisciplineMe.Lib
         {
             using (var db = new Context())
             {
-                return db.Habits;
+                return db.Habits.ToList();
             }
         }
 
