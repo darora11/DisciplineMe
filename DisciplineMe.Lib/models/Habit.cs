@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Linq;
 
 namespace DisciplineMe.Lib.models
 {
@@ -28,6 +29,36 @@ namespace DisciplineMe.Lib.models
                 QuestionPhrase = this.QuestionPhrase,
                 Confiramtions = this.Confiramtions
             };
+        }
+
+        public int CountConsecutiveDays()
+        {
+            if (Confiramtions.Count == 0)
+                return 0;
+
+            var negatives = Confiramtions.OrderByDescending(c => c.Date)
+                .Where(c => !c.IsConfirmed).ToList();
+
+            if (negatives.Count == 0)
+                return Confiramtions.Count;
+
+            var max = 0;
+            for (int i = 0; i < negatives.Count - 1; i++)
+            {
+                var length = (int)negatives[i].Date.Subtract(negatives[i - 1].Date).TotalDays - 1;
+                if (length > max)
+                    max = length;
+            }
+
+            int milestone = 0;
+            if (max >= 7 && max < 21)
+                milestone = 7;
+            if (max >= 21 && max < 90)
+                milestone = 21;
+            if (max >= 90)
+                milestone = 90;
+
+            return (int)DateTime.Now.Subtract(negatives[0].Date).TotalDays - 1 + milestone;
         }
     }
 }
