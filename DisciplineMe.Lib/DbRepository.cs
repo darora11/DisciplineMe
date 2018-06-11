@@ -23,7 +23,7 @@ namespace DisciplineMe.Lib
                 var Now = DateTime.Now;
                 var DateStart = new DateTime(Now.Year, Now.Month, Now.Day, MsgTime.Hours, MsgTime.Minutes, MsgTime.Seconds);
 
-                var Habit = new Habit
+                var habit = new Habit
                 {
                     Title = Title,
                     ActiveDuration = ActiveDuration,
@@ -31,7 +31,7 @@ namespace DisciplineMe.Lib
                     DateStart = DateStart
                 };
 
-                db.Habits.Add(Habit);
+                db.Habits.Add(habit);
                 db.SaveChanges();
             }
         }
@@ -56,6 +56,8 @@ namespace DisciplineMe.Lib
         {
             using (var db = new Context())
             {
+                var habit = Read(updatedHabit.Id);
+                habit = (Habit)updatedHabit.Clone();
                 db.SaveChanges();
             }
         }

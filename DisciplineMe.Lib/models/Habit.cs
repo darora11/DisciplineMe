@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace DisciplineMe.Lib.models
 {
-    public class Habit
+    public class Habit : ICloneable
     {
         public int Id { get; set; }
         [Required]
@@ -16,5 +16,18 @@ namespace DisciplineMe.Lib.models
         public string QuestionPhrase { get; set; }
 
         public virtual ICollection<Confirmation> Confiramtions { get; set; }
+
+        public object Clone()
+        {
+            return new Habit
+            {
+                Id = this.Id,
+                Title = this.Title,
+                DateStart = this.DateStart,
+                ActiveDuration = this.ActiveDuration,
+                QuestionPhrase = this.QuestionPhrase,
+                Confiramtions = this.Confiramtions
+            };
+        }
     }
 }
