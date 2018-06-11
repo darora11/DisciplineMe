@@ -7,7 +7,7 @@ using DisciplineMe.Lib.models;
 
 namespace DisciplineMe.Lib
 {
-    class CacheRepository : IHabitRepository
+    public class CacheRepository : IHabitRepository
     {
         public void Create(string Title)
         {
@@ -24,7 +24,22 @@ namespace DisciplineMe.Lib
             throw new NotImplementedException();
         }
 
+        public void Delete(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Delete(Habit habit)
+        {
+            throw new NotImplementedException();
+        }
+
         public Habit Read()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Habit Read(int id)
         {
             throw new NotImplementedException();
         }
@@ -32,6 +47,20 @@ namespace DisciplineMe.Lib
         public void Update()
         {
             throw new NotImplementedException();
+        }
+
+        public void Update(Habit updatedHabit)
+        {
+            throw new NotImplementedException();
+        }
+
+        IEnumerable<Habit> IHabitRepository.Read()
+        {
+            return new List<Habit>
+            {
+                new Habit(),
+                new Habit()
+            };
         }
     }
 }

@@ -53,5 +53,30 @@ namespace DisciplineMe.Lib
         {
             throw new NotImplementedException();
         }
+
+        IEnumerable<Habit> IHabitRepository.Read()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Habit Read(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Update(Habit updatedHabit)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Delete(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Delete(Habit habit)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
