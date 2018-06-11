@@ -9,8 +9,8 @@ namespace DisciplineMe.Lib
 {
     public class RepoFactory
     {
-        private RepoFactory _factory;
-        public RepoFactory Factory
+        private static RepoFactory _factory;
+        public static RepoFactory Factory
         {
             get
             {

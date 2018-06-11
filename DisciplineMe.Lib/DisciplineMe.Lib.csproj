@@ -39,6 +39,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -48,6 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CacheRepository.cs" />
     <Compile Include="Migrations\201806082014045_InitialCreate.cs" />
     <Compile Include="Migrations\201806082014045_InitialCreate.Designer.cs">
       <DependentUpon>201806082014045_InitialCreate.cs</DependentUpon>
@@ -67,6 +69,7 @@
     <Compile Include="models\Habit.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="DbRepository.cs" />
+    <Compile Include="RepoFactory.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
