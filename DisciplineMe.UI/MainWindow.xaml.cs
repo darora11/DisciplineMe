@@ -23,14 +23,8 @@ namespace DisciplineMe.UI
     /// </summary>
     public partial class MainWindow : Window
     {
-        private List<DateTime> _dates = new List<DateTime>
-        {
-            new DateTime(2018,6,25),
-            new DateTime(2018,6,23),
-            new DateTime(2018,6,14)
-        };
-
         private IHabitRepository _repo = RepoFactory.HabitRepository;
+        private Dictionary<CalendarDayButton, DateTime> _dayButtonsDict = new Dictionary<CalendarDayButton, DateTime>();
 
         public MainWindow()
         {
@@ -43,23 +37,33 @@ namespace DisciplineMe.UI
 
         private void listBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            var dates = ((DisplayHabitViewModel)listBox.SelectedValue)
+                .Habit.Confirmations
+                .Where(c => c.IsConfirmed)
+                .Select(c => c.Date)
+                .ToList();
 
+            foreach (var item in _dayButtonsDict)
+            {
+                HighlightDay(item.Key, item.Value, dates);
+            }
         }
 
         // Next part were taken from http://mom.hlmjr.com/2016/11/07/highlighting-dates-on-a-wpf-calendar-control/
         // for dates highlighting in the Calendar.
+        // But was modified for our purposes.
 
         private void calendarButton_Loaded(object sender, EventArgs e)
         {
             CalendarDayButton button = (CalendarDayButton)sender;
             DateTime date = (DateTime)button.DataContext;
-            HighlightDay(button, date);
+            _dayButtonsDict[button] = date;
             button.DataContextChanged += new DependencyPropertyChangedEventHandler(calendarButton_DataContextChanged);
         }
 
-        private void HighlightDay(CalendarDayButton button, DateTime date)
+        private void HighlightDay(CalendarDayButton button, DateTime date, List<DateTime> highlightDates)
         {
-            if (_dates.Contains(date))
+            if (highlightDates.Contains(date))
                 button.Background = Brushes.LightBlue;
             else
                 button.Background = Brushes.White;
@@ -69,7 +73,8 @@ namespace DisciplineMe.UI
         {
             CalendarDayButton button = (CalendarDayButton)sender;
             DateTime date = (DateTime)button.DataContext;
-            HighlightDay(button, date);
+            _dayButtonsDict[button] = date;
+            
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
