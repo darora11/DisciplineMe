@@ -1,4 +1,5 @@
 ﻿using DisciplineMe.Lib;
+using DisciplineMe.Lib.models;
 using DisciplineMe.UI.viewModels;
 using System;
 using System.Collections.Generic;
@@ -16,43 +17,70 @@ using System.Windows.Shapes;
 
 namespace DisciplineMe.UI
 {
+    public enum OperationMode
+    {
+        create,
+        update
+    }
+
     /// <summary>
     /// Логика взаимодействия для AddHabitWindow.xaml
     /// </summary>
     public partial class AddHabitWindow : Window
     {
-        private AddHabitViewModel Habit { get; set; } = new AddHabitViewModel();
+        private AddHabitViewModel _habit;
         IHabitRepository repo = RepoFactory.HabitRepository;
+        private OperationMode _operationMode;
 
-        public AddHabitWindow()
+        public AddHabitWindow() : this(new AddHabitViewModel(), OperationMode.create)
         {
-            InitializeComponent();
+        }
 
-            DataContext = Habit;
+        public AddHabitWindow(Habit habit) : this(new AddHabitViewModel(habit), OperationMode.update)
+        {
+        }
+
+        public AddHabitWindow(AddHabitViewModel habit, OperationMode mode)
+        {
+            _habit = habit;
+            _operationMode = mode;
+            DataContext = _habit;
+            InitializeComponent();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            if (String.IsNullOrWhiteSpace(Habit.Title))
+            if (String.IsNullOrWhiteSpace(_habit.Title))
             {
                 MessageBox.Show("Please, describe your new habit. The field should not be empty.");
                 return;
             }
 
-            try
-            {
+            //try
+            //{
+            if (_operationMode == OperationMode.create)
                 repo.Create(
-                    Title: Habit.Title,
-                    QuestionPhrase: Habit.Message,
-                    ActiveDuration: new TimeSpan(0, Habit.Interval, 0),
-                    MsgTime: Habit.NotificationTimespan
+                    Title: _habit.Title,
+                    QuestionPhrase: _habit.Message,
+                    ActiveDuration: new TimeSpan(0, _habit.Interval, 0),
+                    MsgTime: _habit.NotificationTimespan
                 );
-                Close();
-            }
-            catch (Exception err)
-            {
-                MessageBox.Show("Something went wrong: " + err.Message);
-            }
+            else
+                repo.Update(new Habit
+                {
+                    Id = _habit.Id,
+                    Title = _habit.Title,
+                    ActiveDuration = new TimeSpan(0, _habit.Interval, 0),
+                    QuestionPhrase = _habit.Message,
+                    DateStart = DateTime.Now.Date + _habit.NotificationTimespan,
+                    Confirmations = _habit.Confirmations
+                });
+            Close();
+            //}
+            //catch (Exception err)
+            //{
+            //    MessageBox.Show("Something went wrong: " + err.Message);
+            //}
         }
     }
 }

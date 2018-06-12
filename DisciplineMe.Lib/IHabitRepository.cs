@@ -6,7 +6,11 @@ using System.Text;
 namespace DisciplineMe.Lib
 {
     public interface IHabitRepository
-    { 
+    {
+        event Action<Habit> OnAddItem;
+        event Action<Habit> OnUpdateItem;
+        event Action<Habit> OnDeleteItem;
+
         /// <summary>
         /// Creates new row in Habit table of database.
         /// </summary>

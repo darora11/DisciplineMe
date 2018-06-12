@@ -11,6 +11,10 @@ namespace DisciplineMe.Lib
     {
         private List<Habit> _habits = new List<Habit>();
 
+        public event Action<Habit> OnAddItem;
+        public event Action<Habit> OnUpdateItem;
+        public event Action<Habit> OnDeleteItem;
+
         public void Create(string Title)
         {
             var QPhrase = $"It is time for your habit:\n'{Title}'\nAre you coping?";
@@ -33,6 +37,7 @@ namespace DisciplineMe.Lib
             };
 
             _habits.Add(habit);
+            OnAddItem?.Invoke(habit);
         }
 
         public void Delete(int id)
@@ -43,6 +48,7 @@ namespace DisciplineMe.Lib
         public void Delete(Habit habit)
         {
             _habits.Remove(habit);
+            OnDeleteItem?.Invoke(habit);
         }
 
         public Habit Read(int id)
@@ -54,6 +60,7 @@ namespace DisciplineMe.Lib
         {
             var habit = Read(updatedHabit.Id);
             habit = (Habit)updatedHabit.Clone();
+            OnUpdateItem?.Invoke(habit);
         }
 
         IEnumerable<Habit> IHabitRepository.Read()

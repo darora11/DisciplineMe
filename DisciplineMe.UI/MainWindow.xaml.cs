@@ -14,6 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using DisciplineMe.Lib;
+using DisciplineMe.Lib.models;
 using DisciplineMe.UI.viewModels;
 
 namespace DisciplineMe.UI
@@ -29,14 +30,31 @@ namespace DisciplineMe.UI
         public MainWindow()
         {
             InitializeComponent();
+
+            _repo.OnAddItem += RefreshList;
+            _repo.OnDeleteItem += RefreshList;
+            _repo.OnUpdateItem += RefreshList;
+            _repo.OnUpdateItem += h =>
+            {
+                listBox.SelectedItem = 0;
+            };
+
+            RefreshList(null);
+        }
+
+        private void RefreshList(Habit habit)
+        {
             var habits = new List<DisplayHabitViewModel>();
-            foreach (var habit in _repo.Read())
-                habits.Add(new DisplayHabitViewModel(habit));
+            foreach (var h in _repo.Read())
+                habits.Add(new DisplayHabitViewModel(h));
             listBox.ItemsSource = habits;
         }
 
         private void listBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            if (listBox.SelectedValue == null)
+                return;
+
             var dates = ((DisplayHabitViewModel)listBox.SelectedValue)
                 .Habit.Confirmations
                 .Where(c => c.IsConfirmed)
@@ -74,12 +92,21 @@ namespace DisciplineMe.UI
             CalendarDayButton button = (CalendarDayButton)sender;
             DateTime date = (DateTime)button.DataContext;
             _dayButtonsDict[button] = date;
-            
+
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             new AddHabitWindow().Show();
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            if (listBox.SelectedValue == null)
+                return;
+
+            var habit = ((DisplayHabitViewModel)listBox.SelectedValue).Habit;
+            new AddHabitWindow(habit).Show();
         }
     }
 }

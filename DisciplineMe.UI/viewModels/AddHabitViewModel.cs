@@ -7,11 +7,24 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Data;
+using DisciplineMe.Lib.models;
 
 namespace DisciplineMe.UI.viewModels
 {
-    class AddHabitViewModel : INotifyPropertyChanged
+    public class AddHabitViewModel : INotifyPropertyChanged
     {
+        private ICollection<Confirmation> _confirmations;
+        public ICollection<Confirmation> Confirmations
+        {
+            get { return _confirmations; }
+        }
+
+        private int _id = 0;
+        public int Id
+        {
+            get { return _id; }
+        }
+
         private TimeSpan _notificationTimespan;
         public TimeSpan NotificationTimespan
         {
@@ -88,6 +101,16 @@ namespace DisciplineMe.UI.viewModels
             Title = "Wake up before 7 AM";
             TimeTicks = 26;
             Interval = 30;
+        }
+
+        public AddHabitViewModel(Habit habit)
+        {
+            Title = habit.Title;
+            TimeTicks = (int)(habit.DateStart.TimeOfDay.TotalMinutes / 15);
+            Interval = (int)habit.ActiveDuration.TotalMinutes;
+            _id = habit.Id;
+            _confirmations = habit.Confirmations;
+            Message = habit.QuestionPhrase;
         }
 
         // Source: https://metanit.com/sharp/wpf/22.2.php
