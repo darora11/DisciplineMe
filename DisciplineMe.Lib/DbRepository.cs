@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Data.Entity;
 
 namespace DisciplineMe.Lib
 {
@@ -40,7 +41,7 @@ namespace DisciplineMe.Lib
         {
             using (var db = new Context())
             {
-                return db.Habits.ToList();
+                return db.Habits.Include(h => h.Confirmations).ToList();
             }
         }
 

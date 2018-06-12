@@ -16,7 +16,7 @@ namespace DisciplineMe.Lib.models
         [MaxLength(200)]
         public string QuestionPhrase { get; set; }
 
-        public virtual ICollection<Confirmation> Confiramtions { get; set; }
+        public virtual ICollection<Confirmation> Confirmations { get; set; }
 
         public object Clone()
         {
@@ -27,20 +27,20 @@ namespace DisciplineMe.Lib.models
                 DateStart = this.DateStart,
                 ActiveDuration = this.ActiveDuration,
                 QuestionPhrase = this.QuestionPhrase,
-                Confiramtions = this.Confiramtions
+                Confirmations = this.Confirmations
             };
         }
 
         public int CountConsecutiveDays()
         {
-            if (Confiramtions.Count == 0)
+            if (Confirmations.Count == 0)
                 return 0;
 
-            var negatives = Confiramtions.OrderByDescending(c => c.Date)
+            var negatives = Confirmations.OrderByDescending(c => c.Date)
                 .Where(c => !c.IsConfirmed).ToList();
 
             if (negatives.Count == 0)
-                return Confiramtions.Count;
+                return Confirmations.Count;
 
             var max = 0;
             for (int i = 0; i < negatives.Count - 1; i++)
@@ -58,7 +58,7 @@ namespace DisciplineMe.Lib.models
             if (max >= 90)
                 milestone = 90;
 
-            return (int)DateTime.Now.Subtract(negatives[0].Date).TotalDays - 1 + milestone;
+            return (int)DateTime.Now.Subtract(negatives[0].Date).TotalDays + milestone;
         }
     }
 }
