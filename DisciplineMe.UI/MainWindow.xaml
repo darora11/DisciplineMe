@@ -9,7 +9,6 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="414.8" Width="674.8">
     <Window.Resources>
-        <localVM:ProgressConverter x:Key="ProgressConverter" />
         <DataTemplate x:Key="ItemDataTeplate">
             <Grid>
                 <Grid.ColumnDefinitions>
@@ -21,7 +20,7 @@
                     <TextBlock Margin="5" Text="{Binding NotificationInfo}"/>
                 </StackPanel>
                 <StackPanel Grid.Column="1">
-                    <Label VerticalAlignment="Center" HorizontalAlignment="Center" Content="{Binding Source={StaticResource ProgressConverter}}" FontWeight="Bold" Margin="11,0,1,0"/>
+                    <Label VerticalAlignment="Center" HorizontalAlignment="Center" Content="{Binding Progress}" FontWeight="Bold" Margin="11,0,1,0"/>
                     <StackPanel Orientation="Horizontal">
                         <Ellipse Height="10" Width="10" Margin="25 5 5 5" Stroke="#FFD64F4F" Fill="#FFD64F4F"/>
                         <Ellipse Height="10" Width="10" Margin="5" Stroke="#FF4B4BD4" Fill="#FF4B4BD4"/>

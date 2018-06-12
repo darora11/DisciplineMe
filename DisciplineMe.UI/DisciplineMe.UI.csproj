@@ -62,7 +62,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="viewModels\AddHabitViewModel.cs" />
-    <Compile Include="viewModels\ProgressConverter.cs" />
+    <Compile Include="viewModels\DisplayHabitViewModel.cs" />
     <Page Include="AddHabitWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

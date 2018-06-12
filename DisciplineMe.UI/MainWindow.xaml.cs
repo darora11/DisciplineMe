@@ -35,7 +35,9 @@ namespace DisciplineMe.UI
         public MainWindow()
         {
             InitializeComponent();
-            var habits = _repo.Read();
+            var habits = new List<DisplayHabitViewModel>();
+            foreach (var habit in _repo.Read())
+                habits.Add(new DisplayHabitViewModel(habit));
             listBox.ItemsSource = habits;
         }
 

@@ -11,31 +11,38 @@ namespace DisciplineMe.UI.viewModels
     {
         public Habit Habit { get; set; }
 
-        public string Title { get; set; }
-        public string Progress { get; set; }
-        public string NotificationInfo { get; set; }
-        public int MyProperty { get; set; }
-        public Milestone Milestone { get; set; }
+        public string Title
+        {
+            get { return Habit.Title; }
+        }
+
+        public int TotalDays
+        {
+            get { return Habit.CountConsecutiveDays(); }
+        }
+
+        public string Progress {
+            get
+            {
+                var milestone = 7;
+                if (TotalDays >= 7 && TotalDays < 21)
+                    milestone = 21;
+                else if (TotalDays >= 21 && TotalDays < 90)
+                    milestone = 90;
+                return $"{TotalDays}/{milestone} days";
+            }
+        }
+
+        public string NotificationInfo {
+            get {
+                return $"Each day at {Habit.DateStart.TimeOfDay}" +
+                    $"(during {Habit.ActiveDuration.TotalMinutes} minutes)";
+            }
+        }
 
         public DisplayHabitViewModel(Habit habit)
         {
             Habit = habit;
-            Title = habit.Title;
-
-            habit.Confiramtions.ToList().ForEach(c =>
-            {
-               
-            });
-
-            Progress = $"";
         }
-    }
-
-    public enum Milestone
-    {
-        Zero = 0,
-        First = 7,
-        Second = 21,
-        Third = 90
     }
 }
