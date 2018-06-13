@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DisciplineMe.UI", "Discipli
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DisciplineMe.Lib", "DisciplineMe.Lib\DisciplineMe.Lib.csproj", "{479A9302-49D4-4172-BB8C-2A18D385FEAF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DisciplineMe.Bot", "DisciplineMe.Bot\DisciplineMe.Bot.csproj", "{F343098B-83C5-4F49-8C88-4B0B3165161B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{479A9302-49D4-4172-BB8C-2A18D385FEAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{479A9302-49D4-4172-BB8C-2A18D385FEAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{479A9302-49D4-4172-BB8C-2A18D385FEAF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F343098B-83C5-4F49-8C88-4B0B3165161B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F343098B-83C5-4F49-8C88-4B0B3165161B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F343098B-83C5-4F49-8C88-4B0B3165161B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F343098B-83C5-4F49-8C88-4B0B3165161B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
