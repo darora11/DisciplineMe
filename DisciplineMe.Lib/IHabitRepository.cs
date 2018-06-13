@@ -52,5 +52,18 @@ namespace DisciplineMe.Lib
         /// <param name="habit">Habit to remove. Should contain the same id as
         /// initial one and it should not be equal 0.</param></param>
         void Delete(Habit habit);
+
+        /// <summary>
+        /// Get list of confirmations.
+        /// </summary>
+        /// <param name="startTime">Start of time interval for filtering.</param>
+        /// <param name="intervalLength">Lenght of time interval.</param>
+        /// <returns></returns>
+        Dictionary<int, string> ReadMessages(TimeSpan startTime, TimeSpan intervalLength);
+        /// <summary>
+        /// Creates new confirmation object in database.
+        /// </summary>
+        /// <param name="confirmation">Object to add.</param>
+        void CreateConfirmation(Confirmation confirmation);
     }
 }

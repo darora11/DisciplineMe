@@ -88,5 +88,29 @@ namespace DisciplineMe.Lib
                 OnDeleteItem?.Invoke(habit);
             }
         }
+
+        public Dictionary<int, string> ReadMessages(TimeSpan startTime, TimeSpan intervalLength)
+        {
+            using (var db = new Context())
+            {
+                var dict = (from h in db.Habits
+                             where h.DateStart.TimeOfDay >= startTime && h.DateStart.TimeOfDay < startTime + intervalLength
+                             select new
+                             {
+                                 Message = h.QuestionPhrase,
+                                 Id = h.Id
+                             }).ToDictionary(x => x.Id, x => x.Message);
+                return dict;
+            }
+        }
+
+        public void CreateConfirmation(Confirmation confirmation)
+        {
+            using (var db = new Context())
+            {
+                db.Confirmations.Add(confirmation);
+                db.SaveChanges();
+            }
+        }
     }
 }

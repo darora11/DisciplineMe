@@ -10,6 +10,7 @@ namespace DisciplineMe.Lib
     public class CacheRepository : IHabitRepository
     {
         private List<Habit> _habits = new List<Habit>();
+        private List<Confirmation> _confirmations = new List<Confirmation>();
 
         public event Action<Habit> OnAddItem;
         public event Action<Habit> OnUpdateItem;
@@ -40,6 +41,11 @@ namespace DisciplineMe.Lib
             OnAddItem?.Invoke(habit);
         }
 
+        public void CreateConfirmation(Confirmation confirmation)
+        {
+            _confirmations.Add(confirmation);
+        }
+
         public void Delete(int id)
         {
             Delete(Read(id));
@@ -54,6 +60,17 @@ namespace DisciplineMe.Lib
         public Habit Read(int id)
         {
             return _habits.Find(h => h.Id == id);
+        }
+
+        public Dictionary<int, string> ReadMessages(TimeSpan startTime, TimeSpan intervalLength)
+        {
+            return _habits.Where(h => h.DateStart.TimeOfDay >= startTime && h.DateStart.TimeOfDay < startTime + intervalLength)
+                .Select(h => new
+                {
+                    Id = h.Id,
+                    Message = h.QuestionPhrase
+                })
+                .ToDictionary(h => h.Id, h => h.Message);
         }
 
         public void Update(Habit updatedHabit)

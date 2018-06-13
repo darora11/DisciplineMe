@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DisciplineMe.Lib;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -16,6 +17,8 @@ namespace DisciplineMe.Bot
     // https://github.com/TelegramBots/Telegram.Bot.Examples/blob/master/Telegram.Bot.Examples.Echo/Program.cs
     class Program
     {
+        private IHabitRepository repo = RepoFactory.HabitRepository;
+
         private static readonly TelegramBotClient Bot = new TelegramBotClient("506287830:AAH1wv4ph6iBVUU15rP3Z09QNOG4Cbaug2Y");
 
         public static void Main(string[] args)
@@ -36,6 +39,11 @@ namespace DisciplineMe.Bot
             Bot.StopReceiving();
         }
 
+        private static async List<string> Update()
+        {
+
+        }
+
         private static async void BotOnMessageReceived(object sender, MessageEventArgs messageEventArgs)
         {
             var message = messageEventArgs.Message;
@@ -49,8 +57,6 @@ namespace DisciplineMe.Bot
                     await Bot.SendChatActionAsync(message.Chat.Id, ChatAction.Typing);
 
                     //await Task.Delay(500); // simulate longer running task
-
-
                     for (int i = 0; i < 10; i++)
                     {
                         var inlineKeyboard = new InlineKeyboardMarkup(new[]
@@ -67,6 +73,8 @@ namespace DisciplineMe.Bot
                             replyMarkup: inlineKeyboard);
                     }
                     break;
+
+
 
                 // send custom keyboard
                 case "/keyboard":
