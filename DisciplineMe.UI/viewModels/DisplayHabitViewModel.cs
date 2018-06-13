@@ -35,7 +35,7 @@ namespace DisciplineMe.UI.viewModels
 
         public string NotificationInfo {
             get {
-                return $"Each day at {Habit.DateStart.TimeOfDay}" +
+                return $"Each day at {Habit.MessageTime}" +
                     $"(during {Habit.ActiveDuration.TotalMinutes} minutes)";
             }
         }

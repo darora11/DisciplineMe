@@ -25,14 +25,12 @@ namespace DisciplineMe.Lib
         {
             using (var db = new Context())
             {
-                var DateStart = DateTime.Now.Date + MsgTime;
-
                 var habit = new Habit
                 {
                     Title = Title,
                     ActiveDuration = ActiveDuration,
                     QuestionPhrase = QuestionPhrase,
-                    DateStart = DateStart
+                    MessageTime = MsgTime
                 };
 
                 db.Habits.Add(habit);
@@ -65,7 +63,7 @@ namespace DisciplineMe.Lib
                 var habit = db.Habits.SingleOrDefault(h => h.Id == updatedHabit.Id);
                 habit.Title = updatedHabit.Title;
                 habit.QuestionPhrase = updatedHabit.QuestionPhrase;
-                habit.DateStart = habit.DateStart.Date + updatedHabit.DateStart.TimeOfDay;
+                habit.MessageTime = updatedHabit.MessageTime;
                 habit.ActiveDuration = updatedHabit.ActiveDuration;
                 db.SaveChanges();
                 OnUpdateItem?.Invoke(updatedHabit);
@@ -94,7 +92,7 @@ namespace DisciplineMe.Lib
             using (var db = new Context())
             {
                 var dict = (from h in db.Habits
-                             where h.DateStart.TimeOfDay >= startTime && h.DateStart.TimeOfDay < startTime + intervalLength
+                             where h.MessageTime >= startTime && h.MessageTime < startTime + intervalLength
                              select new
                              {
                                  Message = h.QuestionPhrase,

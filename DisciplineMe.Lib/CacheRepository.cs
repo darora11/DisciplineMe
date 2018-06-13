@@ -27,14 +27,13 @@ namespace DisciplineMe.Lib
         public void Create(string Title, string QuestionPhrase, TimeSpan ActiveDuration, TimeSpan MsgTime)
         {
             var Now = DateTime.Now;
-            var DateStart = new DateTime(Now.Year, Now.Month, Now.Day, MsgTime.Hours, MsgTime.Minutes, MsgTime.Seconds);
 
             var habit = new Habit
             {
                 Title = Title,
                 ActiveDuration = ActiveDuration,
                 QuestionPhrase = QuestionPhrase,
-                DateStart = DateStart
+                MessageTime = MsgTime
             };
 
             _habits.Add(habit);
@@ -64,7 +63,7 @@ namespace DisciplineMe.Lib
 
         public Dictionary<int, string> ReadMessages(TimeSpan startTime, TimeSpan intervalLength)
         {
-            return _habits.Where(h => h.DateStart.TimeOfDay >= startTime && h.DateStart.TimeOfDay < startTime + intervalLength)
+            return _habits.Where(h => h.MessageTime >= startTime && h.MessageTime < startTime + intervalLength)
                 .Select(h => new
                 {
                     Id = h.Id,

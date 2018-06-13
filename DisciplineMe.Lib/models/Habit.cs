@@ -11,7 +11,7 @@ namespace DisciplineMe.Lib.models
         [Required]
         [MaxLength(150)]
         public string Title { get; set; }
-        public DateTime DateStart { get; set; }
+        public TimeSpan MessageTime { get; set; }
         public TimeSpan ActiveDuration { get; set; }
         [MaxLength(200)]
         public string QuestionPhrase { get; set; }
@@ -24,7 +24,7 @@ namespace DisciplineMe.Lib.models
             {
                 Id = this.Id,
                 Title = this.Title,
-                DateStart = this.DateStart,
+                MessageTime = this.MessageTime,
                 ActiveDuration = this.ActiveDuration,
                 QuestionPhrase = this.QuestionPhrase,
                 Confirmations = this.Confirmations

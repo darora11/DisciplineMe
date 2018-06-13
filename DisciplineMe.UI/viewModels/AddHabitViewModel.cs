@@ -106,7 +106,7 @@ namespace DisciplineMe.UI.viewModels
         public AddHabitViewModel(Habit habit)
         {
             Title = habit.Title;
-            TimeTicks = (int)(habit.DateStart.TimeOfDay.TotalMinutes / 15);
+            TimeTicks = (int)(habit.MessageTime.TotalMinutes / 15);
             Interval = (int)habit.ActiveDuration.TotalMinutes;
             _id = habit.Id;
             _confirmations = habit.Confirmations;

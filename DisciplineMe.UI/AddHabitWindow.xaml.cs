@@ -72,7 +72,7 @@ namespace DisciplineMe.UI
                     Title = _habit.Title,
                     ActiveDuration = new TimeSpan(0, _habit.Interval, 0),
                     QuestionPhrase = _habit.Message,
-                    DateStart = DateTime.Now.Date + _habit.NotificationTimespan,
+                    MessageTime = _habit.NotificationTimespan,
                     Confirmations = _habit.Confirmations
                 });
             Close();
