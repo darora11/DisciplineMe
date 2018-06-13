@@ -5,3 +5,8 @@ C:\Users\Lenovo\source\repos\DisciplineMe\DisciplineMe.Bot\obj\Debug\DisciplineM
 C:\Users\Lenovo\source\repos\DisciplineMe\DisciplineMe.Bot\obj\Debug\DisciplineMe.Bot.csproj.CoreCompileInputs.cache
 C:\Users\Lenovo\source\repos\DisciplineMe\DisciplineMe.Bot\obj\Debug\DisciplineMe.Bot.exe
 C:\Users\Lenovo\source\repos\DisciplineMe\DisciplineMe.Bot\obj\Debug\DisciplineMe.Bot.pdb
+C:\Users\Lenovo\source\repos\DisciplineMe\DisciplineMe.Bot\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Lenovo\source\repos\DisciplineMe\DisciplineMe.Bot\bin\Debug\Telegram.Bot.dll
+C:\Users\Lenovo\source\repos\DisciplineMe\DisciplineMe.Bot\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Lenovo\source\repos\DisciplineMe\DisciplineMe.Bot\bin\Debug\Telegram.Bot.xml
+C:\Users\Lenovo\source\repos\DisciplineMe\DisciplineMe.Bot\obj\Debug\DisciplineMe.Bot.csproj.CopyComplete
