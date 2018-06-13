@@ -5,6 +5,8 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Timers;
+using System.Windows.Threading;
 using Telegram.Bot;
 using Telegram.Bot.Args;
 using Telegram.Bot.Types.Enums;
@@ -23,26 +25,36 @@ namespace DisciplineMe.Bot
 
         public static void Main(string[] args)
         {
-            var me = Bot.GetMeAsync().Result;
-            Console.Title = me.Username;
 
-            Bot.OnMessage += BotOnMessageReceived;
-            Bot.OnMessageEdited += BotOnMessageReceived;
-            Bot.OnCallbackQuery += BotOnCallbackQueryReceived;
-            Bot.OnInlineQuery += BotOnInlineQueryReceived;
-            Bot.OnInlineResultChosen += BotOnChosenInlineResultReceived;
-            Bot.OnReceiveError += BotOnReceiveError;
+            var timer = new Timer();
+            timer.Interval = 1000;
+            timer.Elapsed += Tick;
+            timer.Enabled = true;
 
-            Bot.StartReceiving(Array.Empty<UpdateType>());
-            Console.WriteLine($"Start listening for @{me.Username}");
+            //var me = Bot.GetMeAsync().Result;
+            //Console.Title = me.Username;
+
+            //Bot.OnMessage += BotOnMessageReceived;
+            //Bot.OnMessageEdited += BotOnMessageReceived;
+            //Bot.OnCallbackQuery += BotOnCallbackQueryReceived;
+            //Bot.OnInlineQuery += BotOnInlineQueryReceived;
+            //Bot.OnInlineResultChosen += BotOnChosenInlineResultReceived;
+            //Bot.OnReceiveError += BotOnReceiveError;
+
+            //Bot.StartReceiving(Array.Empty<UpdateType>());
+            //Console.WriteLine($"Start listening for @{me.Username}");
+            //Console.WriteLine("1");
+
+            Console.WriteLine("2");
             Console.ReadLine();
-            Bot.StopReceiving();
+            //Bot.StopReceiving();
         }
 
-        private static async List<string> Update()
+        private static void Tick(object sender, EventArgs e)
         {
-
+            Console.WriteLine("1");
         }
+
 
         private static async void BotOnMessageReceived(object sender, MessageEventArgs messageEventArgs)
         {
