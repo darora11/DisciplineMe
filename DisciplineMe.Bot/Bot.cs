@@ -32,15 +32,15 @@ namespace DisciplineMe.Bot
 
             Client.StartReceiving(Array.Empty<UpdateType>());
             Console.WriteLine($"Start listening for @{me.Username}");
+
+            if (ChatId == null)
+                Console.WriteLine("The bot doesn't know your chat id. Please write something to him.");
         }
 
         public async void SendInline(int habitId, string question)
         {
             if (ChatId == null)
-            {
-                Console.WriteLine("The bot doesn't know your chat id. Please write something to him.");
                 return;
-            }
 
             var inlineKeyboard = new InlineKeyboardMarkup(new[]
                         {
@@ -70,6 +70,8 @@ namespace DisciplineMe.Bot
                     message.Chat.Id,
                     "Nice to meet you!",
                     replyMarkup: new ReplyKeyboardRemove());
+
+                Console.WriteLine("Meet a user with ChatId: ", ChatId);
             }
             else
             {

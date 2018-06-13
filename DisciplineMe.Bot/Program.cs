@@ -22,7 +22,7 @@ namespace DisciplineMe.Bot
     {
         private static IHabitRepository _repo = RepoFactory.HabitRepository;
         private static Bot _bot;
-        private static readonly TimeSpan _interval = new TimeSpan(0, 0, 15);
+        private static readonly TimeSpan _interval = new TimeSpan(0, 15, 0);
 
         public static void Main(string[] args)
         {
@@ -43,7 +43,7 @@ namespace DisciplineMe.Bot
 
         private static void Tick(object sender, EventArgs e)
         {
-            var dict = _repo.ReadMessages(DateTime.Now.TimeOfDay, DateTime.Now.TimeOfDay + _interval);
+            var dict = _repo.ReadMessages(DateTime.Now.TimeOfDay, _interval);
             foreach (var item in dict)
             {
                 _bot.SendInline(item.Key, item.Value);

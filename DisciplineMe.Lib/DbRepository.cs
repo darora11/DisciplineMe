@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Data.Entity;
+using System.Data.Entity.SqlServer;
+using System.Data.Entity.Core.Objects;
 
 namespace DisciplineMe.Lib
 {
@@ -88,11 +90,13 @@ namespace DisciplineMe.Lib
         }
 
         public Dictionary<int, string> ReadMessages(TimeSpan startTime, TimeSpan intervalLength)
-        {
+        { 
             using (var db = new Context())
             {
+                var interval = intervalLength.TotalMinutes;
+
                 var dict = (from h in db.Habits
-                             where h.MessageTime >= startTime && h.MessageTime < startTime + intervalLength
+                             where DbFunctions.DiffMinutes(startTime, h.MessageTime) < interval
                              select new
                              {
                                  Message = h.QuestionPhrase,
