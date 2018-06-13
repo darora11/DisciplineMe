@@ -103,10 +103,24 @@ namespace DisciplineMe.UI
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             if (listBox.SelectedValue == null)
+            {
+                MessageBox.Show("Please select an item to update.");
                 return;
+            }
 
             var habit = ((DisplayHabitViewModel)listBox.SelectedValue).Habit;
             new AddHabitWindow(habit).Show();
+        }
+
+        private void RemoveButton_Click(object sender, RoutedEventArgs e)
+        {
+            var habit = ((DisplayHabitViewModel)listBox.SelectedValue).Habit;
+            if (habit == null)
+            {
+                MessageBox.Show("Please select an item to delete.");
+                return;
+            }
+            _repo.Delete(habit);
         }
     }
 }

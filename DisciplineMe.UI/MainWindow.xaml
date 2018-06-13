@@ -55,7 +55,7 @@
         <StackPanel Grid.Row="1">
             <Button Content="Add new Habit" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="180" Height="40" Background="#FF56BF56" FontSize="16" Click="Button_Click"/>
             <Button Content="Edit" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="180" Height="24" Click="Button_Click_1"/>
-            <Button Content="Remove" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="180" Height="24"/>
+            <Button Content="Remove" Name="RemoveButton" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="180" Height="24" Click="RemoveButton_Click"/>
         </StackPanel>
 
     </Grid>
