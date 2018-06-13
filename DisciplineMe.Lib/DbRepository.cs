@@ -25,8 +25,7 @@ namespace DisciplineMe.Lib
         {
             using (var db = new Context())
             {
-                var Now = DateTime.Now;
-                var DateStart = new DateTime(Now.Year, Now.Month, Now.Day, MsgTime.Hours, MsgTime.Minutes, MsgTime.Seconds);
+                var DateStart = DateTime.Now.Date + MsgTime;
 
                 var habit = new Habit
                 {
@@ -63,13 +62,13 @@ namespace DisciplineMe.Lib
         {
             using (var db = new Context())
             {
-                var habit = Read(updatedHabit.Id);
+                var habit = db.Habits.SingleOrDefault(h => h.Id == updatedHabit.Id);
                 habit.Title = updatedHabit.Title;
                 habit.QuestionPhrase = updatedHabit.QuestionPhrase;
                 habit.DateStart = habit.DateStart.Date + updatedHabit.DateStart.TimeOfDay;
                 habit.ActiveDuration = updatedHabit.ActiveDuration;
                 db.SaveChanges();
-                OnUpdateItem?.Invoke(habit);
+                OnUpdateItem?.Invoke(updatedHabit);
             }
         }
 
@@ -83,7 +82,8 @@ namespace DisciplineMe.Lib
         {
             using (var db = new Context())
             {
-                db.Habits.Remove(habit);
+                db.Habits.Remove(
+                    db.Habits.SingleOrDefault(h => h.Id == habit.Id));
                 db.SaveChanges();
                 OnDeleteItem?.Invoke(habit);
             }
