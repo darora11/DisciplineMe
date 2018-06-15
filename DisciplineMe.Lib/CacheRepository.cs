@@ -33,7 +33,8 @@ namespace DisciplineMe.Lib
                 Title = Title,
                 ActiveDuration = ActiveDuration,
                 QuestionPhrase = QuestionPhrase,
-                MessageTime = MsgTime
+                MessageTime = MsgTime,
+                Confirmations = new List<Confirmation>()
             };
 
             _habits.Add(habit);
@@ -42,6 +43,9 @@ namespace DisciplineMe.Lib
 
         public void CreateConfirmation(Confirmation confirmation)
         {
+            var habit = _habits.Where(h => h.Id == confirmation.Habit.Id).FirstOrDefault();
+            if (habit != null)
+                habit.Confirmations.Add(confirmation);
             _confirmations.Add(confirmation);
         }
 
@@ -75,7 +79,10 @@ namespace DisciplineMe.Lib
         public void Update(Habit updatedHabit)
         {
             var habit = Read(updatedHabit.Id);
-            habit = (Habit)updatedHabit.Clone();
+            habit.Title = updatedHabit.Title;
+            habit.QuestionPhrase = updatedHabit.QuestionPhrase;
+            habit.MessageTime = updatedHabit.MessageTime;
+            habit.ActiveDuration = updatedHabit.ActiveDuration;
             OnUpdateItem?.Invoke(habit);
         }
 

@@ -33,7 +33,7 @@ namespace DisciplineMe.Lib.models
 
         public int CountConsecutiveDays()
         {
-            if (Confirmations.Count == 0)
+            if (Confirmations == null || Confirmations.Count == 0)
                 return 0;
 
             var negatives = Confirmations.OrderByDescending(c => c.Date)
